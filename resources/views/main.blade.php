@@ -10,6 +10,9 @@
 <p>Список полученных открыток</p>
 @foreach ($list_postcard as $postcard)
     <img src="{{ $postcard->img }}" width="300" height="300">
+    <p>{{ $postcard->holiday }}</p>
+    <p>{{ $postcard->text }}</p>
+    <p>{{ $postcard->description }}</p>
 @endforeach
 <br>
 <p>Список отправленных открыток</p>

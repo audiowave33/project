@@ -23,6 +23,8 @@ Route::post('/create-postcard', [PostcardController:: class, 'generate']);
 Route::get('/postcardlayout', [PostcardController::class, 'index']);
 Route::post('/create-postcardlayout', [PostcardController:: class, 'generate']);
 
+Route::get('/check',[App\Http\Controllers\HomeController:: class, 'check']);
+
 Route::get('/main', [MainController::class, 'index']);
 
 Auth::routes();
