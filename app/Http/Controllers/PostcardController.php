@@ -41,10 +41,12 @@ class PostcardController extends Controller
         $path = "img/" . uniqid()  . ".jpg";
         $request_image = $request->file('img');
         $image = Image::make($request_image);
-        $image->text($text, 120, 100, function($font){
+        $image->text($text, 0, 0, function($font){
             $font->file('fonts/ofont.ru_Montserrat.ttf');
+            $font->align('bottom');
+            $font->valign('bottom');
             $font->size(48);
-            $font->color('#e1e1e1');  
+            $font->color('#000');  
         }); 
 
         if(User::where("name", $address)->first()){

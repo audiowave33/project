@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Models\Postcard;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use Illuminate\Support\Facades\DB;
+
+
 class HomeController extends Controller
 {
     /**
@@ -39,7 +42,13 @@ class HomeController extends Controller
     {
         $id = Auth::id();
         //Список полученных открыток
-        $list_postcard = Postcard::where(["to_id" => $id, "notify" => "no"])->get(["id","img",'holiday','text']);
+        $list_postcard = Postcard::where(["to_id" => $id, "notify" => "no"])->get(["id"]);
+
+
+        if(empty($list_postcard[0])){
+            return response(['error' => true, 'error-msg' => 'Not found'], 404);
+        }
+        $users = User::where("id", $list_postcard[0]->to_id);
         //Список отправленных открыток
         #$list_postcard_send = Postcard::where("from_id", $id)->get("img");
 

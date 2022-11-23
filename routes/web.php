@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostcardController;
+use App\Http\Controllers\PostCardLayoutController;
 use App\Http\Controllers\MainController;
 /*
 |--------------------------------------------------------------------------
@@ -17,15 +18,19 @@ use App\Http\Controllers\MainController;
 Route::get('/', function () {
     return view('welcome');
 });
+//Загрузка собсвтенного шаблона с поздравлением
 Route::get('/postcard', [PostcardController::class, 'index']);
 Route::post('/create-postcard', [PostcardController:: class, 'generate']);
 
-Route::get('/postcardlayout', [PostcardController::class, 'index']);
-Route::post('/create-postcardlayout', [PostcardController:: class, 'generate']);
+//Загрузка готового шаблона (ещё не работает)
+Route::get('/postcardlayout', [PostCardLayoutController::class, 'index']);
+Route::post('/create-postcardlayout', [PostCardLayoutController::class, 'generate']);
 
+
+//Проверка увдомлений
 Route::get('/check',[App\Http\Controllers\HomeController:: class, 'check']);
 
-Route::get('/main', [MainController::class, 'index']);
+//Route::get('/main', [MainController::class, 'index']);
 
 Auth::routes();
 
