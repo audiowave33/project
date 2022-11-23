@@ -9,10 +9,23 @@
 
 .body-login-page {
     background-color: cadetblue;
-    height: 100% !important;
-    /* height: 100vh; */
+    /* height: 90% !important; */
+     height: 95vh;
 }
 
 
 
-html, body, main {height:100vh;}
+html, body, main {
+    /* height:100vh; */
+}
+
+
+.py-4 {
+    padding-top: 0px;
+    padding-bottom: 0;
+    padding: 0;
+}
+
+.navbar-brand {
+    height:5vh;
+}
