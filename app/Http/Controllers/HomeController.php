@@ -27,11 +27,27 @@ class HomeController extends Controller
     {
         $id = Auth::id();
         //Список полученных открыток
-        $list_postcard = Postcard::where("to_id", $id)->get("img");
-
+        $list_postcard = Postcard::where("to_id", $id)->get(["img",'holiday','text']);
+        
         //Список отправленных открыток
         $list_postcard_send = Postcard::where("from_id", $id)->get("img");
         return view ('main', compact('list_postcard','list_postcard_send'));
+
+    }
+
+    public function check()
+    {
+        $id = Auth::id();
+        //Список полученных открыток
+        $list_postcard = Postcard::where(["to_id" => $id, "notify" => "no"])->get(["id","img",'holiday','text']);
+        //Список отправленных открыток
+        #$list_postcard_send = Postcard::where("from_id", $id)->get("img");
+
+        foreach ($list_postcard as $list){
+            //print_r($list->id);
+            Postcard::where(["to_id" => $id, "notify" => "no"])->update(['notify' => 'yes']);
+        }
+        return response()->json($list_postcard);
 
     }
 }
