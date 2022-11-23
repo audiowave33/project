@@ -21,3 +21,5 @@
 @foreach ($list_postcard_send as $postcard_send)
     <img src="{{ $postcard_send->img }}" width="300" height="300">
 @endforeach
+</div>
+</div>
