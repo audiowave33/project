@@ -3,26 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
 use App\Models\Postcard;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
-class HomeController extends Controller
-{
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
+class MainController extends Controller
+{
     public function index()
     {
         $id = Auth::id();
@@ -32,6 +19,6 @@ class HomeController extends Controller
         //Список отправленных открыток
         $list_postcard_send = Postcard::where("from_id", $id)->get("img");
         return view ('main', compact('list_postcard','list_postcard_send'));
-
     }
+    
 }

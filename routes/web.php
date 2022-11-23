@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\TestController;
+use App\Http\Controllers\PostcardController;
+use App\Http\Controllers\MainController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,7 +17,13 @@ use App\Http\Controllers\TestController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/test', [TestController::class, 'index']);
+Route::get('/postcard', [PostcardController::class, 'index']);
+Route::post('/create-postcard', [PostcardController:: class, 'generate']);
+
+Route::get('/postcardlayout', [PostcardController::class, 'index']);
+Route::post('/create-postcardlayout', [PostcardController:: class, 'generate']);
+
+Route::get('/main', [MainController::class, 'index']);
 
 Auth::routes();
 
