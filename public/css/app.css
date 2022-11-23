@@ -1,0 +1,18 @@
+.login-form {
+    background-color: rgba(119, 136, 153, 0.377);
+    border: 1 solid;
+    border-radius: 15px;
+    padding: 30px;
+    margin:0 25% 0 25%;
+    width:50%;
+}
+
+.body-login-page {
+    background-color: cadetblue;
+    height: 100% !important;
+    /* height: 100vh; */
+}
+
+
+
+html, body, main {height:100vh;}
