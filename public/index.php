@@ -1,3 +1,4 @@
+<link href="../css/app.css" rel="stylesheet">
 <?php
 
 use Illuminate\Contracts\Http\Kernel;

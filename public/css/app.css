@@ -1,22 +1,51 @@
 .login-form {
-    background-color: rgba(119, 136, 153, 0.377);
+    background-color: rgba(119, 136, 153, 0.377);    
     border: 1 solid;
-    border-radius: 15px;
-    padding: 30px;
+    border-radius: 0 0 25px 25px;
+    padding: 130px 30px 130px 30px;
     margin:0 25% 0 25%;
     width:50%;
+
 }
 
 .body-login-page {
-    background-color: cadetblue;
+    /* background-color: cadetblue; */
+    /* background-image: url(../img/wall2.jpg); */
+
+background: #2188E5;
+background: -webkit-linear-gradient(top left, #2188E5, #D63665);
+background: -moz-linear-gradient(top left, #2188E5, #D63665);
+background: linear-gradient(to bottom right, #2188E5, #D63665);
+    background-size: cover;
     /* height: 90% !important; */
-     height: 95vh;
+     height: 94vh;
 }
 
 
+.body-cabinet {
+margin: 0;
+background: #535353;
 
-html, body, main {
-    /* height:100vh; */
+     /* height: 94vh; */
+
+}
+
+.main-form {
+    /* background-color: aliceblue; */
+    background-color: rgb(238, 238, 238);    
+    border: 1 solid;
+    /* border-radius: 0 0 25px 25px; */
+    padding: 100px 30px 130px 30px;
+    margin:0 10% 0 10%;
+    width:80%;
+}
+
+body {
+    margin: 0;
+}
+
+ main {
+    height:90vh;
 }
 
 
@@ -27,5 +56,5 @@ html, body, main {
 }
 
 .navbar-brand {
-    height:5vh;
+    height:3vh;
 }
