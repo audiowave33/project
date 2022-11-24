@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Image;
 
 use Illuminate\Http\Request;
 use App\Models\Postcard;
@@ -39,7 +40,8 @@ class PostCardLayoutController extends Controller
 
         #Сохраняем изображение
         $path = "img/" . uniqid()  . ".jpg";
-        $request_image = $request->file('img');
+
+        $request_image = $request->input('img');
         $image = Image::make($request_image);
         
 
@@ -49,6 +51,14 @@ class PostCardLayoutController extends Controller
         else{
             return redirect('/postcard');
         }
+
+        $image->text($text, 150, 150, function($font){
+            $font->file('fonts/ofont.ru_Montserrat.ttf');
+            $font->align('bottom');
+            $font->valign('bottom');
+            $font->size(48);
+            $font->color('#000');  
+        }); 
 
         Postcard::create([
             'holiday' => $holiday,
@@ -60,7 +70,7 @@ class PostCardLayoutController extends Controller
             'from_id' => $user->id,
         ]);
         $image->save(public_path($path));
-        return redirect('/postcard');
+        return redirect('/postcardlayout');
 
 
         #$path = "img/" . uniqid()  . ".jpg";
