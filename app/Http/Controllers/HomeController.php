@@ -35,7 +35,7 @@ class HomeController extends Controller
         $list_postcard = Postcard::where("to_id", $id)->paginate(10);
 
         //Список отправленных открыток
-        $list_postcard_send = Postcard::where("from_id", $id)->get("img");
+        $list_postcard_send = Postcard::where("from_id", $id)->latest(5);
         return view ('main', compact('list_postcard','list_postcard_send'));
 
     }

@@ -1,0 +1,18 @@
+#header{
+    font-size: 24px;
+    display: flex;
+    justify-content: space-between;
+    width:100%;
+    background-color:#f9f9f9;
+    color: rgb(22, 22, 22);
+}
+#header a{
+    font-size: 24px;
+    color: rgb(22, 22, 22);
+    text-decoration: none;
+    
+}
+#header a:hover{
+    color: rgb(29, 29, 29);
+    text-decoration: underline; 
+}
