@@ -9,7 +9,7 @@ class Postcard extends Model
 {
     #use HasFactory;
     
-
+    
     protected $table = 'postcard';
 
     protected $fillable = [

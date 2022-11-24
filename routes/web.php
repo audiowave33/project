@@ -1,4 +1,7 @@
 <?php
+use App\Models\Postcard;
+use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostcardController;
@@ -28,10 +31,11 @@ Route::post('/create-postcardlayout', [PostCardLayoutController::class, 'generat
 
 
 //Проверка увдомлений
-Route::get('/check',[App\Http\Controllers\HomeController:: class, 'check']);
+
 
 //Route::get('/main', [MainController::class, 'index']);
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/check',[App\Http\Controllers\HomeController:: class, 'check']);

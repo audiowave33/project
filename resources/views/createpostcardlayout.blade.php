@@ -13,6 +13,7 @@
         <p>Текст на открытке<input type="text" name="text"></p>
         <p>Описание открытки<input type="text" name="description"><p>
         <p>Получатель<input type="text" name="address"></p>
+        <p>Список адресатов<input type="file" name="address_list"></p>
         <button>Отправить</button>
     </form>
     <a href='/home'>Вернуться</a>
